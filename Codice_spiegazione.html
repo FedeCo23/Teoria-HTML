@@ -10,62 +10,8 @@
     <!--Serve per l'icona personalizzata che si vede nelle tab sopra (yt,fb ecc); si chiama Favicon-->
     <style>
         /*Lo stile si può mettere qui, inline o foglio esterno*/
-        .title {
-            color: white;
-            text-align: center;
-            font-size: 2em;
-        }
-
-        /*Aumenta la dimensione del testo del 20% rispetto al testo base */
-        .center {
-            text-align: center;
-        }
-
-        /*eliminare perchè ho messo center nel body */
-        .square {
-            background-color: mediumvioletred;
-            color: white;
-            margin: 20px;
-            padding: 15px;
-        }
-
-        .blocklist {
-            display: flex;
-            /*Centra gli elementi nella pagina (?)*/
-            justify-content: space-around;
-            /*Crea dello spazio intorno ai 2 elementi contenuti in questo div (i due blocchi lista)*/
-            border: groove 20px;
-            /*Solid, groove, dotted ecc sono tipologia di effetti per i bordi*/
-            border-color: mediumvioletred;
-            background-color: white;
-            margin: 20px;
-            padding: 50px;
-        }
-
-        .blocklist1 {
-            display: inline-block;
-            /*La lista diventa un blocco da poter modificare/spostare ecc*/
-            border: solid 3px;
-            border-color: mediumvioletred;
-            vertical-align: top;
-            /*Allinea il testo o gli elementi in alto*/
-            margin: 20px;
-            padding: 30px;
-        }
-
-        .h1 {
-            border: groove 20px;
-            border-color: mediumvioletred;
-            margin: 0 auto;
-            padding: 20px;
-            width: 80%;
-            text-align: left;
-        }
-
-        p {
-            font-size: large;
-        }
     </style>
+    <link rel="stylesheet" href="Stile.css">
 </head>
 
 <body> <!--Corpo della pagina-->
@@ -97,13 +43,13 @@
         <section id="elementi"> <!--Breve accenno di h1 e p, pre, br, em, strong, link, target blank-->
             <h1> Elementi HTML semplici</h1>
             <div>
-                <h1> <code> &lt;h1&gt;</code> È un'intestazione di livello 1; rappresenta il titolo principale</h1>
-                <h2> <code> &lt;h2&gt;</code> E' un'intestazione di livello 2; rappresenta il titolo meno importante
-                </h2>
-                <h3> <code> &lt;h3&gt;</code> E' un'intestazione di livello 3; rappresenta il titolo ancora meno
-                    importante</h3>
-                <h4> Questo è <code>&lt;h3&gt;</code> un Continua fino a <code> &lt;h6&gt;</code> ma tendenzialmente si
-                    utilizza fino a <code> &lt;h3&gt;</code></h4>
+                <p> <code> &lt;h1&gt;</code> È un'intestazione di livello 1; rappresenta il titolo principale</p>
+                <p> <code> &lt;h2&gt;</code> E' un'intestazione di livello 2; rappresenta il titolo meno importante
+                </p>
+                <p> <code> &lt;h3&gt;</code> E' un'intestazione di livello 3; rappresenta il titolo ancora meno
+                    importante</p>
+                <p> Questo è <code>&lt;h3&gt;</code> un Continua fino a <code> &lt;h6&gt;</code> ma tendenzialmente si
+                    utilizza fino a <code> &lt;h3&gt;</code></p>
             </div>
             <div>
                 <h2> L'elemento <code> &lt;p&gt;</code> definisce un paragrafo </h2>

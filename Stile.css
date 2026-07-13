@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(238, 192, 207);
+}
+
+nav {
+    background-color: mediumvioletred;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+    font-style: italic;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.square {
+    background-color: mediumvioletred;
+    color: white;
+    margin: 20px;
+    padding: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+main {
+    display: inline-block;
+    /*La lista diventa un blocco da poter modificare/spostare ecc*/
+    border: solid 3px;
+    border-color: mediumvioletred;
+    vertical-align: top;
+    /*Allinea il testo o gli elementi in alto*/
+    margin: 20px;
+    padding: 30px;
+}
+
+.layout_flex {
+    display: flex;
+    /*Centra gli elementi nella pagina (?)*/
+    justify-content: space-around;
+    /*Crea dello spazio intorno ai 2 elementi contenuti in questo div (i due blocchi lista)*/
+    border: groove 20px;
+    /*Solid, groove, dotted ecc sono tipologia di effetti per i bordi*/
+    border-color: mediumvioletred;
+    background-color: white;
+    margin: 20px;
+    padding: 50px;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+img {
+    width: 250px;
+}
+
+video {
+    width: 200px;
+}
+
+.box {
+    border: groove 20px;
+    border-color: mediumvioletred;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    text-align: left;
+}
