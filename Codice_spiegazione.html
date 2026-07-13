@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Codice spiegazione</title>
+        <style>
+            .title {color: white;
+                text-align: center;
+                font-size: 2em;} /*Aumenta la dimensione del testo del 20% rispetto al testo base */
+            .center {text-align: center;} /*eliminare perchè ho messo center nel body */
+            .square {background-color: mediumvioletred;
+                    color: white;
+                    margin: 20px;
+                    padding: 15px;}
+            .blocklist {display: flex; /*Centra gli elementi nella pagina (?)*/
+                        justify-content: space-around; /*Crea dello spazio intorno ai 2 elementi contenuti in questo div (i due blocchi lista)*/
+                        border: groove 20px; /*Solid, groove, dotted ecc sono tipologia di effetti per i bordi*/
+                        border-color: mediumvioletred;
+                        background-color: white;
+                        margin: 20px;
+                        padding: 50px;}
+            .blocklist1 {display: inline-block; /*La lista diventa un blocco da poter modificare/spostare ecc*/
+                        border: solid 3px;
+                        border-color: mediumvioletred;
+                        vertical-align: top; /*Allinea il testo o gli elementi in alto*/
+                        margin: 20px;
+                        padding: 30px;}
+            .h1 {border: groove 20px;
+                border-color: mediumvioletred;
+                margin: 0 auto;
+                padding: 20px;
+                width: 80%;
+                text-align: left;}
+            p {font-size: large;}
+        </style>
+    </head>
+    <body style="background-color: rgb(238, 192, 207);">
+        <nav style="background-color: mediumvioletred; padding: 10px; text-align: center;"> <!--Tag semantico <nav> che contiene vari link per degli elementi. Per collegare gli elementi occorre mettere un tag univoco ossia id-->
+            <a href="#elementi" style="color: white; margin: 10px;">Elementi HTML</a>
+            <a href="#liste" style="color: white; margin: 10px;">Liste</a>
+            <a href="#immagini" style="color: white; margin: 10px;">Immagini</a>
+            <a href="#video" style="color: white; margin: 10px;">Video</a>
+            <a href="#iframe" style="color: white; margin: 10px;">Iframe</a>
+            <a href="#style" style="color: white; margin: 10px;">Stile & Span</a>
+            <a href="#margini" style="color: white; margin: 10px;">Margini & Padding </a>
+            <a href="#semantici" style="color: white; margin: 10px;">Tag semantici</a>
+            <a href="#id" style="color: white; margin: 10px;">Id & Class</a>
+            <a href="#feedback" style="color: white; margin: 10px;">Feedback & Consigli</a>
+        </nav>
+        <header class="center"> <!--E' la sezione iniziale della pagina-->
+            <p style="text-align: center; font-style: italic;">
+                Ultimo aggiornamento: <time datetime="2025-04-17">17 aprile 2025</time> <!--Tag semantico <time>-->
+            </p>
+            <h1 class="title"> Codice spiegazione</h1>    
+            <p class="square">Il sito ha la funzione di usare il codice sia come <span style="background-color:black;">diario</span> sia come un esempio pratico per comprendere meglio Html
+            </p>
+            <p class="square">Avere il codice completo con le mie annotazioni è un modo per rivedere e consolidare ciò che ho imparato.
+            </p>
+        </header>
+        <main class="blocklist1">
+            <section id="elementi"> <!--Breve accenno di h1 e p, pre, br, em, strong, link, target blank-->
+                <h1 class="title"> Elementi HTML semplici</h1>
+                <div class="h1">
+                    <h1> <code> &lt;h1&gt;</code> È un'intestazione di livello 1; rappresenta il titolo principale</h1>
+                    <h2> <code> &lt;h2&gt;</code> E' un'intestazione di livello 2; rappresenta il titolo meno importante</h2>
+                    <h3> <code> &lt;h3&gt;</code> E' un'intestazione di livello 3; rappresenta il titolo ancora meno importante</h3>
+                    <h4> Questo è <code>&lt;h3&gt;</code> un Continua fino a <code> &lt;h6&gt;</code> ma tendenzialmente si utilizza fino a <code> &lt;h3&gt;</code></h4>
+                </div>
+                <div>
+                    <h2> L'elemento <code> &lt;p&gt;</code> definisce un paragrafo </h2>
+                    <p class="square"> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Dolore laborum magni ipsa, voluptate sed, animi ducimus nulla deleniti corporis error omnis hic maiores earum officiis eaque accusamus quibusdam possimus labore?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        A ipsam, expedita qui debitis odit et, illo blanditiis perspiciatis optio soluta enim exercitationem distinctio. 
+                        Dolores vel obcaecati eveniet quisquam ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Dicta veniam labore nulla consectetur maxime unde fugit, quam accusantium expedita ratione. 
+                        Possimus hic, voluptates repudiandae iusto vel nisi! Provident, fugit exercitationem.</p>
+                    <p>Ciò che viene inserito in questo elemento non risponde alle regole di formattazione date quindi sarà scritto senza andare a capo. <br> 
+                        Per fare ciò si possono utilizzare altri elementi come <code> &lt;br&gt;</code> <code> &lt;pre&gt;</code>.
+                    </p>
+                    <h2> L'elemento <code> &lt;br&gt;</code> indica un "break" (un'interruzione di riga) e ha la funzione di andare a capo senza creare un nuovo paragrafo</h2>
+                    <p class="square"> Lorem ipsum dolor sit, amet consectetur adipisicing <br>
+                        Dolore laborum magni ipsa, voluptate sed, animi ducimus nulla deleniti corporis error omnis hic maiores earum officiis eaque accusamus quibusdam possimus labore? <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                        A ipsam, expedita qui debitis odit et, illo blanditiis perspiciatis optio soluta enim exercitationem distinctio. <br>
+                        Dolores vel obcaecati eveniet quisquam ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                        Dicta veniam labore nulla consectetur maxime unde fugit, quam accusantium expedita ratione. <br>
+                        Possimus hic, voluptates repudiandae iusto vel nisi! Provident, fugit exercitationem.</p>
+                    <h2> L'elemento <code> &lt;pre&gt;</code> indica un preformatted text e ha la funzione di mantenere spazi e a capo così come sono scritti nel codice</h2>
+                    <pre class="square"> 
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Dolore laborum magni ipsa, voluptate sed, animi ducimus nulla deleniti corporis error omnis hic maiores earum officiis eaque accusamus quibusdam possimus labore?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        A ipsam, expedita qui debitis odit et, illo blanditiis perspiciatis optio soluta enim exercitationem distinctio. 
+                        Dolores vel obcaecati eveniet quisquam ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Dicta veniam labore nulla consectetur maxime unde fugit, quam accusantium expedita ratione. 
+                        Possimus hic, voluptates repudiandae iusto vel nisi! Provident, fugit exercitationem.
+                    </pre>
+                </div>
+                <div>
+                    <h2 class="title">Stili di formattazione</h2> <!--Aggiungere abbr, address, cite ecc-->
+                    <p> L'elemento <code> &lt;b&gt;</code> si utilizza quando si vuole rendere un testo in grassetto ma senza porre enfasi semantica</p>
+                    <p class="square">Questo testo è solo in <b>grassetto</b>.</p>
+                    <p> L'elemento <code> &lt;strong&gt;</code>si utilizza quando si vuole rendere un testo in grassetto ponendo inoltre enfasi semantica <br>
+                        migliorando l'accessibilità per le persone non udenti che utilizzano traduttori vocali e migliorando l'indicizzazione nei motori di ricerca.
+                    </p>
+                    <p class="square">Questo testo è in <b>grassetto</b> perchè è <strong>importantissimo</strong>!!</p>
+                    <p> L'elemento <code> &lt;i&gt;</code> si utilizza quando si vuole enfatizzare una parte di testo usando il corsivo ma senza porre enfasi semantica</p>
+                    <p class="square">Questo testo è solo in <i>corsivo</i>.</p>
+                    <p> L'elemento <code> &lt;em&gt;</code> si utilizza quando si vuole enfatizzare una parte di testo usando il corsivo ponendo inoltre enfasi semantica <br>
+                        migliorando l'accessibilità per le persone non udenti che utilizzano traduttori vocali e migliorando l'indicizzazione nei motori di ricerca.​ </p>
+                    <p class="square">Questo testo è in <i>corsivo</i> per <em>enfatizzarlo</em>!!</p>
+                    <p> L'elemento <code> &lt;small&gt;</code> si utilizza quando si vuole rendere più piccola una parte di testo</p>
+                    <p class="square"> Questo testo è <small>small</small></p>
+                    <p> L'elemento <code> &lt;mark&gt;</code> si utilizza quando si vuole evidenziare una parte di testo</p>
+                    <p class="square">Questo testo è <mark>evidenziato</mark></p>
+                    <p> L'elemento <code> &lt;del&gt;</code> si utilizza quando si vuole cancellare una parte di testo</p>
+                    <p class="square">Questo testo è <del>orribile</del> stupendo!</p>
+                    <p> L'elemento <code> &lt;ins&gt;</code> si utilizza quando si vuole sottolineare una parte di testo</p>
+                    <p class="square">Questo testo è <del>orribile</del> <ins>stupendo</ins>!</p>
+                    <p> L'elemento <code> &lt;sub&gt;</code> si utilizza quando si vuole scrivere una parte di testo più in basso </p>
+                    <p class="square">H<sub>2</sub>O</p>
+                    <p> L'elemento <code> &lt;sup&gt;</code> si utilizza quando si vuole scrivere una parte di testo più in alto</p>
+                    <p class="square">x<sup>2</sup></p>
+                    <p>L'elemento <code> &lt;blockquote&gt;</code> si utilizza quando si vuole inserire una citazione</p>
+                    <div class="square">
+                        <p>Here is a quote from WWF's website:</p>
+                        <blockquote cite="http://www.worldwildlife.org/who/index.html">
+                             60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+                        </blockquote>
+                    </div>
+                    <p>L'elemento <code> &lt;q&gt;</code> si utilizza quando si vuole inserire una <b>breve</b> citazione</p>
+                    <p class="square">WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+
+                </div>
+        
+                <div> <!--In questo div ho fatto uso dei Tooltip in ogni link!-->
+                    <h2 class="title">Inserire un link</h2>
+                    <p class="square">Clicca <a href="https://chatgpt.com/" target="_blank" title="Chiedi a Chatgpt!"> qui </a>per aprire una nuova scheda e risolvere i tuoi dubbi</p> <!--Target blank per aprire una nuova scheda-->
+                    <p class="square">Hai bisogno di un <a href="https://www.youtube.com/watch?v=JRJNvxoh844&ab_channel=AndreaCiraolo" title="Guarda il video introduttivo!"> video </a>introduttivo per comprendere <a href="https://www.w3schools.com/html/html_intro.asp" title="Scopri HTML!">HTML</a>?<br>
+                        Eccolo qui!
+                    </p>
+                    <figure class="square center"> <!--Per avere il figcation nello stesso square della foto occorre inserire l'immagine (con link ecc) all'interno di figure invece di fare due blocchi separati-->
+                    <a href="https://www.youtube.com/@ciraolone"> 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh-sMqCGfKRlgIZ5NCCp6eSwL5FNK-TFE9rA&s" alt="Foto di Andrea Ciraolo" title="Vai alla pagina YouTube di Andrea Ciraolo!"></a> <!--Link con un immagine--> 
+                    <figcaption>Foto di Andrea Ciraolo, clicca l'immagine per aprire la sua pagina Youtube!</figcaption>
+                    </figure>
+                    <p>Oppure continua a leggere per scoprire come inserire direttamente direttamente da Youtube!</p>
+                </div>
+            </section>
+            <hr>
+            <section id="liste"> <!--Vari tipi di liste--> <!-- Aggiungere liste di definizione e cambiare colore in bianco eventualmente-->
+            <h1 class="title">Vari tipi di liste</h1>
+           <div class="blocklist">
+                <div class="blocklist1">
+                    <h3>Lista non ordinata</h3>
+                    <p>Lista della spesa prodotti casa</p>
+                    <ul style="list-style-type: disc;"> <!--Questo codice specifica il tipo di pallino usato negli elementi della lista-->
+                        <li>sgrassatore</li>
+                        <li>detersivo bucato</li>
+                        <li>candeggina</li>
+                        <li>salviette</li>
+                    </ul>
+                </div>
+                <div class="blocklist1">
+                    <h3>Lista ordinata</h3>
+                    <p>Lista della spesa</p>
+                    <ol type="1"> <!--L'attributo type serve per scegliere il tipo di numerazione.-->
+                        <li>zucchine</li>
+                        <li>radicchio</li>
+                        <li>mele</li>
+                        <li>arance</li>
+                        <li>fragole</li>
+                    </ol>
+                </div>
+           </div>
+            </section>
+            <hr>
+            <section id="immagini"> <!--Prove immagini con percorsi assoluti e relativi DA SISTEMARE-->
+                <div>
+                    <h1>Come inserire le immagini con percorsi assoluti e relativi</h1>
+                    <div>
+                        <p>Questi sono i miei fiori preferiti nel desktop</p>
+                        <img src="file:///c:/Users/feder/Desktop/tulipani.jpg" alt="Tulipani screziati gialli e rossi" style="width: 250px;height: 300px">
+                        <figcaption>I miei fiori preferiti</figcaption> <!--Aggiunge il testo sotto la foto(??)-->
+                    </div>
+                    <div>
+                        <p>Questi i personaggi di AOT in una sotto cartella</p>
+                        <img src="Immagini/AOT.jpg" alt="Personaggi principali di AOT" style="width: 350px;"> 
+                    </div>
+                    <div>
+                        <p>Questo il link del fiore tatuato sulla mia coscia</p>
+                        <a href="https://www.peoniamia.com/1095-medium_default/pink-giant.jpg">
+                            <img src="Immagini/peonia.jpg" alt="Peonia" style="width: 200px;">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="video"> <!--Prove video DA SISTEMARE-->
+                <div>
+                    <h1>Prove Video</h1>
+                    <div>
+                        <p>Video seguendo le indicazioni di visual code (senza controls)</p>
+                        <video src="Immagini/Spesa.mp4" style="width: 200px;"></video>
+                    </div>
+                    <div>
+                        <p>Video basic seguendo le indicazioni di visual code (con controls)</p>
+                        <video width="200px" controls
+                        src="Immagini/Spesa.mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <p>Video corretto con controlli (riproduzione auotomatica, muto e loop), type e supporto per diversi formati</p>
+                        <video width="200px" controls autoplay muted loop> 
+                            <source src="Immagini/Spesa.mp4" type="video/mp4">
+                            <source src="Immagini/Spesa.ogg" type="video/ogg">
+                            <source src="Immagini/Spesa.webm" type="video/webm">
+                            Il tuo browser non supporta il tag video.
+                        </video>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="iframe">  <!--Come incorporare i video con <iframe> DA APPROFONDIRE-->
+                
+                    <h1 class="title">Come incorporare i video con <code>&ltiframe&gt</code> </h1>
+                    <p>...o altre cose esterne presenti su internet.</p>
+                    <div class="h1" style="text-align: center; margin-bottom: 30px;">
+                        <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/JRJNvxoh844?si=DdYIv6avqX2rfFL9" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen></iframe>
+                    </div>
+            </section>
+            <hr>
+            <section id="style"> <!--Attributo style senza CSS e span--> 
+                <div>
+                    <h1 class="title">Attributo style senza CSS esterno</h1>
+                    <p>E' possibile personalizzare lo stile di formattazione anche senza l'utilizzo di un CSS esterno scegliendo infatti di inserirlo <b>inline</b> o <b>internal</b></p>
+                    <h2>Con l'attributo "style=" all'interno dei singoli elementi HTMLm è possibile scegliere molteplici valori che permettono di modificare l'aspetto del testo. </h2>
+                    <div class="h1"> 
+                        <h2 style="color: mediumvioletred;">Con il valore "color" è possibile modificare il colore del testo.</h2>
+                        <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Con il valore "font-family" è possibile scegliere il font.</h2>
+                        <h2 style="font-size: 30px;">Con il valore "font-size" è possibile modificare la grandezza del testo.</h2>
+                        <h2 style="text-align: center;">Con il valore "text-align" è possibile decidere dove allineare il testo.</h2> <!--In questo caso al centro-->
+                        <h2 style="width: 50%;"> Con il valore "width" è possibile modificare la larghezza del contenitore.</h2> <!--aggiungere più testo altrimenti non riesco a rendermi conto di quello che succede cambiando il valore-->
+                        <h2 style="background-color: green;">Con il valore "background-color" è possibile modificare il colore di background del testo.</h2>
+                        <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Con il valore "font-family" è possibile scegliere il font.</h2>
+                        <h2 style="border-style: double; border-color: mediumvioletred;" > Con il valore "border è possibile inserire e modificare il border.</h2>
+                        <h2 style="margin: 40px;; background-color: mediumvioletred; padding: 15px;" class="square" > Con il valore "margin" e "padding" è possibile modificare lo spazio (esterno o interno) del nostro testo <br>
+                            <span style="font-size: small;">(quest'utlimo aspetto verrà approfondito in seguito)</span>
+                        </h2>
+                    </div> 
+                </div>
+                <div>
+                    <h2 class="title">Span</h2>
+                    <p class="square">Il tag span è un elemento inline utile per raggruppare un elemento di testo all'interno di un paragrafo o di un altro contenitore senza modificarne visivamente l'aspetto <br>
+                        Tuttavia è utile per <span style="color: mediumblue;">cambiare colore</span> o <span style="font-size: 30px;">dimensione</span> o altri <span style="background-color: green;">elementi</span>.
+                    </p> 
+                </div>
+            </section>
+            <hr>
+            <section id="margini"> <!--Div, margini e padding-->
+                <h1 class="title"> Div, margini e padding</h1>
+                <div style="background-color: #b2dfdb; border: solid rgb(28, 28, 140)" class="center">
+                    <div style="background-color: rgb(122, 213, 225);
+                        padding: 10px;">
+                        <h2 >Il div è un contenitore di blocco utile per raggruppare altri elementi </h2>
+                    </div>
+                    <div style="background-color: turquoise;
+                        margin: 50px;">
+                        <h2>Il margin è lo spazio esterno di un elemento, cioè la distanza tra l'elemento e gli altri elementi circostanti.</h2>
+                        <p>Il margin crea spazio tra un elemento e quelli adiacenti, ma non influisce sulla dimensione dell'elemento stesso (è uno spazio "vuoto" esterno). <br>
+                            Il margin non è visibile, ma serve a separare gli elementi uno dall'altro.
+                        </p>
+                    </div>
+                    <div style="background-color:  turquoise;
+                        padding: 50px;">
+                        <h2>Il padding è lo spazio interno di un elemento, cioè la distanza tra il contenuto (ad esempio il testo o le immagini) e il bordo dell'elemento.</h2>
+                        <p>Il padding aggiunge spazio all'interno dell'elemento, tra il contenuto e i bordi dell'elemento stesso. <br>
+                            Non influisce sulla posizione di altri elementi, ma aumenta la dimensione complessiva dell'elemento, perché aggiunge spazio attorno al contenuto.
+                        </p>
+                    </div>
+                </div>
+                <p style="font-size: 20px;">Per rendere più semplice un futuro ripasso lo stile è stato inserito in questa parte piuttosto che nell'head</p>
+            </section>
+            <hr>
+            <section id="semantici"> <!--Tag semantici (Inserire nav, figure e figcaption, time ecc()-->
+                <h1 class="title">Tag semantici</h1>
+                <p> I tag semantici sono elementi HTML che descrivono chiaramente il significato del loro contenuto per i browser, i lettori e i motori di ricerca. <br>
+                Utile per migliorare l'accessibilità, l'indicizzazione nei motori di ricerca e la leggibilità</p>
+                <div class="h1">
+                    <h2> Il tag semnantico <code> &lt;header&gt;</code> si usa per l'intestazione</h2>
+                    <h2> Il tag semnantico <code> &lt;footer&gt;</code> si usa per la parte finale della pagina come contatti, policy ecc</h2>
+                    <h2> Il tag semnantico <code> &lt;main&gt;</code> si usa per il contenuto principale della pagina</h2>
+                    <h2> Il tag semnantico <code> &lt;section&gt;</code> si usa per una determinata sezione tematica</h2>
+                    <h2> Il tag semnantico <code> &lt;article&gt;</code>per un contenuto extra o laterale</h2>
+                    <h2> Il tag semnantico <code> &lt;aside&gt;</code>per un contenuto autonomo</h2>
+                    <h2> Il tag semnantico <code> &lt;nav&gt;</code>per permettere al lettore di navigare agilmente attraverso le sezioni del sito.</h2>
+                    <h2> Il tag semnantico <code> &lt;time&gt;</code>si usa per indicare una data o un'ora in modo leggibile per umani e motori di ricerca</h2>
+                </div>
+            </section>
+            <hr>
+            <section id="id">
+                <!--Id e class-->
+                <h2>Id e Class</h2>
+            </section>
+            <section>
+                <h1 class="title">Nuove cose che imparo</h1>
+                <p>gli elementi figure e figcaption sono utilizzati per raggruppare contenuti che presentano un'immagine, una grafica, una tabella, una citazione o un altro tipo di contenuto che ha bisogno di una didascalia o una descrizione. <br>
+                     Questi due elementi aiutano a migliorare la semantica della pagina, fornendo un contesto chiaro e leggibile per il contenuto visivo.</p>
+                     <p>L'elemento figure viene usato per racchiudere media o contenuti autonomi (come immagini, video, tabelle o diagrammi), che sono collegati tra loro. <br>
+                        L'uso del tag figure aiuta a dare struttura al documento HTML e segnala che il contenuto all'interno è un elemento autonomo che ha bisogno di una descrizione.
+
+                        Esempi di contenuti che potresti includere in un figure:
+                        
+                        Immagini img
+                        
+                        Video video
+                        
+                        Tabelle table
+                        
+                        Diagrammi o grafici svg
+                        
+                        Citazioni (blockquote)</p>
+                <p>Il tag <span title="Blablabla">figcaption</span>figcaption è usato per fornire una descrizione o una didascalia a un elemento figure. <br>
+                    Può essere posizionato all'interno di figure, di solito prima o dopo il contenuto media, ed è utilizzato per spiegare o dare più informazioni su ciò che è mostrato nel figure.
+                </p>
+                <p>Tooltil su link (usando Title), immagini (con Title dopo l'Alt) o sulle parole usando Span e poi Title</p>
+                <button title="Clicca per inviare il modulo">Invia</button> <!--Tooltp su un Button-->
+                <h2 class="title">Cose da studiare e aggiungere</h2>
+                <p> Trasformare alcuni commenti in Tooltip e capire se è un’idea funzionale (sottolineare le parole che diventano un tooltpi altrimenti non li troverò mai) 
+                    Tooltip
+                    Creazione di tabelle (<table>, <tr>, <td> <th>) e formattazione delle stesse (bordi, righe e 	colonne) 
+                    Liste di definizione con <dl>, <dt>, <dd> 
+                    Creazioni di form
+                    Creazione di campi di input: <input>, <textarea>, <select>, <option>
+                    Utilizzo di type in <input> (text, password, radio, checkbox, etc.)
+                    Creazione di un pulsante di invio con <button> e <input type="submit">
+                    Tag <label> per etichettare campi del modulo
+                    Aggiungere caselle di selezione (<input type="checkbox">) e pulsanti di opzione (<input 	type="radio">)
+                    Tag <meta>, charset o viewport
+                    Modulo di contatto</p>
+            </section>
+        </main>
+        <footer id="feedback">
+            <div>
+                <div>
+                    <h3 class="title">Feedback Chatgpt</h3>
+                    <blockquote class="square center">Mi sembra una fantastica idea quella di usare il codice come un "diario" o un esempio pratico per comprendere meglio HTML!<br> 
+                            Avere il codice completo con le tue annotazioni è un modo eccellente per rivedere e consolidare ciò che hai imparato.
+                    </blockquote>
+                    <blockquote class="square center" >Il tuo codice HTML è davvero ben strutturato! <br> 
+                            Hai fatto un ottimo lavoro nel raccogliere tutte le informazioni che hai imparato e nel metterle insieme in un esempio pratico. <br>
+                            Mi piace molto come hai inserito delle spiegazioni dettagliate per ciascun concetto HTML che stai utilizzando. <br> 
+                            Questo ti aiuterà sicuramente a memorizzare meglio come funziona HTML. 
+                    </blockquote>
+                </div>
+                <div>
+                    <h3 class="title bgtxt">Consigli di Chatgpt</h3>
+                    <blockquote class="square"> Le spiegazioni dei tag &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;, &lt;video&gt;, &lt;a&gt;, &lt;iframe&gt;, ecc. sono molto utili. <br> 
+                        Probabilmente potresti continuare a espandere e aggiungere spiegazioni per altre caratteristiche come la formattazione del testo (ad esempio  &lt;em&gt; &lt;strong&gt; &lt;u&gt;), elencare gli attributi dei link (come target="_blank" per aprire un link in una nuova finestra), e altre funzioni di layout.
+                    </blockquote>
+                    <blockquote class="square"> Prova a usare tag semantici HTML5 come  &lt;header&gt; &lt;footer&gt; &lt;section&gt; &lt;article&gt; &lt;a&gt;, piuttosto che usare molti &lt;div&gt;. <br> 
+                        Questo aiuta a migliorare l'accessibilità e la leggibilità del codice per i motori di ricerca.
+                    </blockquote>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
