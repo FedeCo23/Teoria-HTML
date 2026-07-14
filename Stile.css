@@ -5,7 +5,6 @@
     --colore-principale-scuro: mediumvioletred;
     --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
     --colore-nav: mediumvioletred;
-    --colore-card: rgb(233, 224, 200);
     --colore-testo: rgb(40, 35, 25);
     --colore-testo-chiaro: rgb(255, 255, 255);
 }
@@ -28,9 +27,7 @@ main {
     padding: 30px;
 }
 
-.chiaro {
-    color: var(--colore-testo);
-}
+
 
 /* ==========================================================================
    Navigazione e intestazione
@@ -155,7 +152,10 @@ pre {
 }
 
 .card strong {
-    color: var(--colore-principale-scuro);
+    color: var(--colore-testo);
+}
+.card .strong_chiaro {
+    color: var(--colore-testo-chiaro);
 }
 
 .card code {
