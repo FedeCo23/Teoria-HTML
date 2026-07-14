@@ -13,9 +13,9 @@
     <nav>
         <a href="#elementi">Elementi HTML</a>
         <a href="#liste">Liste</a>
-        <a href="#video">Video</a>
-        <a href="#iframe">Iframe</a>
+        <a href="#link">Link</a>
         <a href="#immagini">Immagini</a>
+        <a href="#video">Video</a>
         <a href="#semantici">Tag semantici</a>
         <a href="#tabelle">Tabelle</a>
         <a href="#form">Form</a>
@@ -48,7 +48,7 @@
                 <div class="esempio">
                     <h1 class="reset">Intestazione h1</h1>
                     <h2 class="reset">Intestazione h2</h2>
-                    <h3>Intestazione h3</h3>
+                    <h3 class="reset">Intestazione h3</h3>
                     <h4>Intestazione h4</h4>
                     <h5>Intestazione h5</h5>
                     <h6>Intestazione h6</h6>
@@ -248,72 +248,78 @@ Prima riga
                 <h3>1. Percorso assoluto</h3>
                 <p>Il percorso assoluto indica l'indirizzo completo del file presente nel computer.
                 </p>
-                <img src="file:///C:/Users/Nome/Desktop/immagine.jpg"
-                    alt="Immagine non visualizzata perchè proviene da un file presente nel pc raffigurante un tulipano">
-                <figcaption>Esempio di percorso assoluto.
-                </figcaption>
+                <div class="esempio"> <img src="file:///C:/Users/Nome/Desktop/immagine.jpg"
+                        alt="Immagine non visualizzata perchè proviene da un file presente nel pc raffigurante un tulipano">
+                    <figcaption>Esempio di percorso assoluto.
+                    </figcaption>
+                </div>
+
             </div>
             <div class="card">
                 <h3>2. Percorso relativo</h3>
                 <p>Il percorso relativo utilizza la posizione del file rispetto alla
                     pagina HTML.</p>
-                <img src="immagine.jpg" alt="Immagine nella stessa cartella raffigurante un tulipano">
-                <figcaption>Immagine presente nella stessa cartella del file HTML.
-                </figcaption>
-                <img src="immagini/foto.jpg" alt="Immagine in una sottocartella raffigurante un tulipano">
-                <figcaption>Immagine presente nella cartella "immagini".
-                </figcaption>
+                <div class="esempio"><img src="immagine.jpg"
+                        alt="Immagine nella stessa cartella raffigurante un tulipano">
+                    <figcaption>Immagine presente nella stessa cartella del file HTML.
+                    </figcaption>
+                </div>
             </div>
             <div class="card">
                 <h3>3. Immagine tramite link</h3>
                 <p>L'immagine viene caricata utilizzando l'URL di un sito web.
                 </p>
-                <img src="https://www.sito.it/immagine.jpg"
-                    alt="Immagine caricata da Internet raffigurante un tulipano">
-                <figcaption>Immagine caricata da un URL esterno.</figcaption>
+                <div class="esempio"><img src="https://www.sito.it/immagine.jpg"
+                        alt="Immagine caricata da Internet raffigurante un tulipano">
+                    <figcaption>Immagine caricata da un URL esterno.</figcaption>
+                </div>
+
             </div>
-        </section>
-        <h2>Altri tipi di immagini</h2>
-        <div class="card">
-            <h3>Immagini raster</h3>
-            <p>Le immagini raster sono composte da una griglia di pixel. Ogni pixel possiede un colore e, insieme
-                agli
-                altri, forma l'immagine.</p>
-            <p>Sono ideali per fotografie e immagini ricche di dettagli, ma quando vengono ingrandite oltre la loro
-                risoluzione perdono qualità e appaiono sgranate.</p>
-            <p>I formati più comuni sono <strong>JPG, JPEG, PNG, GIF, WebP e BMP.</strong></p>
-        </div>
-        <div class="card">
-            <h3>Immagini vettoriali</h3>
-            <p>Le immagini vettoriali non sono composte da pixel, ma da forme geometriche descritte tramite formule
-                matematiche, come linee, curve e poligoni.</p>
-            <p>Possono essere ingrandite o ridotte senza perdere qualità e, generalmente, occupano meno spazio
-                quando
-                rappresentano loghi, icone o illustrazioni.</p>
-            <p>Sono particolarmente adatte per loghi, icone, grafici e testi.</p>
-            <p>I formati più utilizzati sono <strong>SVG, AI, EPS e PDF.</strong></p>
-        </div>
-        <div class="card">
-            <h3>Il formato SVG</h3>
-            <p>Un file SVG (Scalable Vector Graphics) è un'immagine vettoriale scritta utilizzando il linguaggio
-                XML.
-            </p>
-            <p>Poiché è costituito da codice, può essere modificato facilmente con HTML, CSS e JavaScript,
-                permettendo
-                di creare animazioni, cambiare colori e realizzare effetti dinamici.</p>
-            <p>XML (eXtensible Markup Language) è un linguaggio utilizzato per organizzare e trasportare dati in
-                modo
-                leggibile sia dagli esseri umani sia dai computer.</p>
-        </div>
-        <div class="card">
-            <h3>Immagini responsive</h3>
-            <p>Le immagini responsive si adattano automaticamente alle dimensioni dello schermo, migliorando la
-                visualizzazione su smartphone, tablet e computer.</p>
-            <p>Possono essere rese responsive con il CSS oppure utilizzando il tag <code>&lt;picture&gt;</code>, che
-                permette di fornire più versioni della stessa immagine. Il browser sceglierà automaticamente quella
-                più
-                adatta al dispositivo utilizzato.</p>
-        </div>
+            <h2>Altri tipi di immagini</h2>
+            <div class="card">
+                <h3>Immagini raster</h3>
+                <p>Le immagini raster sono composte da una griglia di pixel. Ogni pixel possiede un colore e, insieme
+                    agli
+                    altri, forma l'immagine.</p>
+                <p>Sono ideali per fotografie e immagini ricche di dettagli, ma quando vengono ingrandite oltre la loro
+                    risoluzione perdono qualità e appaiono sgranate.</p>
+                <p>I formati più comuni sono <strong style="color: var(--colore-testo-chiaro)">JPG, JPEG, PNG, GIF, WebP
+                        e BMP.</strong></p>
+            </div>
+            <div class=" card">
+                <h3>Immagini vettoriali</h3>
+                <p>Le immagini vettoriali non sono composte da pixel, ma da forme geometriche descritte tramite
+                    formule
+                    matematiche, come linee, curve e poligoni.</p>
+                <p>Possono essere ingrandite o ridotte senza perdere qualità e, generalmente, occupano meno
+                    spazio
+                    quando
+                    rappresentano loghi, icone o illustrazioni.</p>
+                <p>Sono particolarmente adatte per loghi, icone, grafici e testi.</p>
+                <p>I formati più utilizzati sono <strong style="color: var(--colore-testo-chiaro) ">SVG, AI, EPS
+                        e PDF.</strong></p>
+            </div>
+            <div class="card">
+                <h3>Il formato SVG</h3>
+                <p>Un file SVG (Scalable Vector Graphics) è un'immagine vettoriale scritta utilizzando il linguaggio
+                    XML.
+                </p>
+                <p>Poiché è costituito da codice, può essere modificato facilmente con HTML, CSS e JavaScript,
+                    permettendo
+                    di creare animazioni, cambiare colori e realizzare effetti dinamici.</p>
+                <p>XML (eXtensible Markup Language) è un linguaggio utilizzato per organizzare e trasportare dati in
+                    modo
+                    leggibile sia dagli esseri umani sia dai computer.</p>
+            </div>
+            <div class="card">
+                <h3>Immagini responsive</h3>
+                <p>Le immagini responsive si adattano automaticamente alle dimensioni dello schermo, migliorando la
+                    visualizzazione su smartphone, tablet e computer.</p>
+                <p>Possono essere rese responsive con il CSS oppure utilizzando il tag <code>&lt;picture&gt;</code>, che
+                    permette di fornire più versioni della stessa immagine. Il browser sceglierà automaticamente quella
+                    più
+                    adatta al dispositivo utilizzato.</p>
+            </div>
         </section>
         <hr />
         <section id="video">
@@ -372,64 +378,33 @@ Prima riga
                     mentre <code>src</code> indica il file contenente i sottotitoli.</p>
             </div>
         </section>
-        <hr />
-        <section id="style">
-            <h2>Span e stile del testo</h2>
-            <p>Il tag <code>&lt;span&gt;</code> è un elemento inline utilizzato per selezionare una parte di testo
-                all'interno di un contenitore senza creare una nuova riga.</p>
-            <div class="card">
-                <h3>Il tag &lt;span&gt;</h3>
-                <p>Lo <code>&lt;span&gt;</code> non modifica il contenuto da solo, ma permette di applicare stili CSS o
-                    manipolazioni tramite JavaScript solo a una parte specifica del testo.</p>
-                <div class="esempio">
-                    Questo testo contiene una parola <span style="color:mediumblue;">colorata</span>, una parola con
-                    dimensione <span style="font-size:30px;">diversa</span> e una parola con <span
-                        style="background-color:green;">sfondo colorato</span>.
-                </div>
-            </div>
-        </section>
         <hr>
         <section id="semantici">
             <h2>Tag semantici</h2>
-            <p>I tag semantici sono elementi HTML che descrivono il significato del contenuto che contengono. Aiutano
-                browser, motori di ricerca e tecnologie assistive a comprendere meglio la struttura della pagina.</p>
+
             <div class="card">
-                <h3>&lt;header&gt;</h3>
-                <p>Rappresenta l'intestazione di una pagina o di una sezione. Può contenere titolo, logo, introduzione o
-                    menu.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;main&gt;</h3>
-                <p>Contiene il contenuto principale e unico della pagina. Dovrebbe contenere le informazioni più
-                    importanti del documento.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;section&gt;</h3>
-                <p>Rappresenta una sezione tematica della pagina, generalmente con un proprio titolo.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;article&gt;</h3>
-                <p>Indica un contenuto autonomo e indipendente, come un articolo di un blog, una notizia o una
-                    recensione.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;aside&gt;</h3>
-                <p>Contiene informazioni collegate ma non fondamentali rispetto al contenuto principale, come
-                    approfondimenti, pubblicità o collegamenti correlati.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;nav&gt;</h3>
-                <p>Contiene i principali collegamenti di navigazione del sito, permettendo agli utenti di spostarsi tra
-                    le diverse sezioni.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;footer&gt;</h3>
-                <p>Rappresenta la parte finale di una pagina o sezione. Può contenere copyright, contatti, informazioni
-                    legali o collegamenti utili.</p>
-            </div>
-            <div class="card">
-                <h3>&lt;time&gt;</h3>
-                <p>Indica una data o un orario in un formato comprensibile sia agli utenti sia ai motori di ricerca.</p>
+                <h3>Formattazione del testo</h3>
+                <p>I tag semantici sono elementi HTML che descrivono il significato del contenuto che contengono.
+                    Aiutano browser, motori di ricerca e tecnologie assistive a comprendere meglio la struttura della
+                    pagina.</p>
+                <div class="esempio">
+                    <p><code>&lt;header&gt;</code> → Rappresenta l'intestazione di una pagina o di una sezione. Può
+                        contenere titolo, logo, introduzione o menu.</p>
+                    <p><code>&lt;nav&gt;</code> → Contiene i principali collegamenti di navigazione del sito,
+                        permettendo agli utenti di spostarsi tra le diverse sezioni.</p>
+                    <p><code>&lt;main&gt;</code> → Contiene il contenuto principale e unico della pagina. Dovrebbe
+                            contenere le informazioni più importanti del documento.</p>
+                    <p><code>&lt;section&gt;</code> → Rappresenta una sezione tematica della pagina, generalmente con un
+                        proprio titolo.</p>
+                    <p><code>&lt;article&gt;</code> → Indica un contenuto autonomo e indipendente, come un articolo di
+                        un blog, una notizia o una recensione.</p>
+                    <p><code>&lt;aside&gt;</code> → Contiene informazioni collegate ma non fondamentali rispetto al
+                        contenuto principale, come approfondimenti, pubblicità o collegamenti correlati.</p>
+                    <p><code>&lt;footer&gt;</code> → Rappresenta la parte finale di una pagina o sezione. Può contenere
+                        copyright, contatti, informazioni legali o collegamenti utili.</p>
+                    <p><code>&lt;time&gt;</code> → Indica una data o un orario in un formato comprensibile sia agli
+                        utenti sia ai motori di ricerca.</p>
+                </div>
             </div>
         </section>
         <hr>

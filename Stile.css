@@ -3,7 +3,7 @@
     /* Colori principali */
     --colore-sfondo-pagina: rgb(238, 192, 207);
     --colore-principale-scuro: mediumvioletred;
-    --colore-principale-scruro-scuro: rgba(199, 21, 133, 0.3);
+    --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
     --colore-nav: mediumvioletred;
     --colore-card: rgb(233, 224, 200);
     --colore-testo: rgb(40, 35, 25);
@@ -15,8 +15,9 @@
    ========================================================================== */
 
 body {
-    background-color:var(--colore-sfondo-pagina)
-
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--colore-sfondo-pagina)
 }
 
 main {
@@ -27,10 +28,8 @@ main {
     padding: 30px;
 }
 
-
-
-.center {
-    text-align: center;
+.chiaro {
+    color: var(--colore-testo);
 }
 
 /* ==========================================================================
@@ -48,7 +47,6 @@ nav a {
     margin: 10px;
     text-decoration: none;
     padding: 5px;
-    margin: 5px;
     border-radius: 5px;
 }
 
@@ -60,12 +58,9 @@ hr {
     border: none;
     height: 1px;
     background-color: var(--colore-principale-scuro);
-    box-shadow: 0 2px 4px var(--colore-principale-scruro-scuro);
+    box-shadow: 0 2px 4px var(--colore-principale-dettagli-scuri);
 }
 
-header {
-    text-align: center;
-}
 
 header {
     text-align: center;
@@ -83,7 +78,7 @@ h2 {
     font-size: 2em;
 }
 
-.reset {
+.esempio .reset {
     all: revert;
 }
 
@@ -108,11 +103,14 @@ h2 {
 .esempio {
     margin-top: 20px;
     padding: 15px;
-    border-left: 4px solid var(--colore-principale-scruro-scuro);
+    border-left: 4px solid var(--colore-principale-dettagli-scuri);
     background: var(--colore-testo-chiaro);
     border-radius: 5px;
 }
-.esempio p {color: var(--colore-testo);}
+
+.esempio p {
+    color: var(--colore-testo);
+}
 
 
 pre {
@@ -136,7 +134,8 @@ pre {
     color: var(--colore-testo-chiaro);
 }
 
-.card p {color: var(--colore-testo-chiaro);
+.card>p {
+    color: var(--colore-testo-chiaro);
     margin-bottom: 15px;
 }
 
@@ -160,7 +159,7 @@ pre {
 }
 
 .card code {
-    background: #ececec;
+    background: var(--colore-testo-chiaro);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
@@ -183,7 +182,6 @@ ol {
    ========================================================================== */
 
 #immagini {
-    max-width: 900px;
     margin: 50px auto;
     padding: 30px;
 }
@@ -226,26 +224,26 @@ ol {
    Tabelle
    ========================================================================== */
 
-.esempio table{
-    width:100%;
-    border-collapse:collapse;
+.esempio table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .esempio th,
-.esempio td{
-    border:1px solid #ccc;
-    padding:10px;
-    text-align:center;
+.esempio td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
 }
 
-.esempio caption{
-    margin-bottom:10px;
-    font-weight:bold;
+.esempio caption {
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.esempio th{
-    background:var(--colore-principale-scuro);
-    color:white;
+.esempio th {
+    background: var(--colore-principale-scuro);
+    color: white;
 }
 
 /* ==========================================================================
