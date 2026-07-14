@@ -2,12 +2,54 @@
 :root {
     /* Colori principali */
     --colore-sfondo-pagina: rgb(238, 192, 207);
-    --colore-principale-scuro: mediumvioletred;
+    --colore-sfondo-pagina-dark: rgb(152, 17, 103);
+    --colore-principale: mediumvioletred;
+    --colore-principale-dark: rgb(98, 12, 66);
     --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
     --colore-nav: mediumvioletred;
+    --colore-nav-dark: rgb(98, 12, 66);
     --colore-testo: rgb(40, 35, 25);
     --colore-testo-chiaro: rgb(255, 255, 255);
 }
+
+
+/*DARK MODE*/
+.dark-mode-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: var(--colore-testo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5px;
+}
+
+.dark-mode-bar label {
+    writing-mode: vertical-rl;
+    color: var(--colore-testo-chiaro);
+}
+
+#dark-mode-switch {
+    display: none;
+}
+
+#dark-mode-switch:checked~.div_contenitore {
+    background: #222;
+     --colore-sfondo-pagina: rgb(238, 192, 207);
+    --colore-sfondo-pagina-dark: rgb(152, 17, 103);
+    --colore-principale: mediumvioletred;
+    --colore-principale-dark: rgb(98, 12, 66);
+    --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
+    --colore-nav: mediumvioletred;
+    --colore-nav-dark: rgb(98, 12, 66);
+    --colore-testo: rgb(40, 35, 25);
+    --colore-testo-chiaro: rgb(255, 255, 255);
+}
+
+
 
 /* ==========================================================================
    Layout generale
@@ -21,12 +63,11 @@ body {
 
 main {
     border: solid 3px;
-    border-color: var(--colore-principale-scuro);
+    border-color: var(--colore-principale);
     border-radius: 5px;
     margin: 20px;
     padding: 30px;
 }
-
 
 
 /* ==========================================================================
@@ -54,7 +95,7 @@ nav a:hover {
 hr {
     border: none;
     height: 1px;
-    background-color: var(--colore-principale-scuro);
+    background-color: var(--colore-principale);
     box-shadow: 0 2px 4px var(--colore-principale-dettagli-scuri);
 }
 
@@ -80,7 +121,7 @@ h2 {
 }
 
 .square {
-    background-color: var(--colore-principale-scuro);
+    background-color: var(--colore-principale);
     color: var(--colore-testo-chiaro);
     margin: 20px;
     padding: 15px;
@@ -111,7 +152,7 @@ h2 {
 
 
 pre {
-    background: white;
+    background: var(--colore-testo-chiaro);
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
@@ -123,7 +164,7 @@ pre {
     padding: 25px;
     border: 1px solid #d8d8d8;
     border-radius: 10px;
-    background: var(--colore-principale-scuro);
+    background: var(--colore-principale);
 }
 
 .card h3 {
@@ -154,6 +195,7 @@ pre {
 .card strong {
     color: var(--colore-testo);
 }
+
 .card .strong_chiaro {
     color: var(--colore-testo-chiaro);
 }
@@ -168,7 +210,6 @@ pre {
 /* ==========================================================================
    Liste
    ========================================================================== */
-
 ul {
     list-style-type: disc;
 }
@@ -231,7 +272,7 @@ ol {
 
 .esempio th,
 .esempio td {
-    border: 1px solid #ccc;
+    border: 1px solid var(--colore-testo-chiaro);
     padding: 10px;
     text-align: center;
 }
@@ -242,7 +283,7 @@ ol {
 }
 
 .esempio th {
-    background: var(--colore-principale-scuro);
+    background: var(--colore-principale);
     color: white;
 }
 
@@ -255,14 +296,14 @@ form {
 }
 
 fieldset {
-    border: 2px solid mediumvioletred;
+    border: 2px solid var(--colore-principale);
     border-radius: 8px;
     padding: 15px 20px;
     margin-bottom: 20px;
 }
 
 legend {
-    color: mediumvioletred;
+    color: var(--colore-principale);
     font-weight: bold;
     padding: 0 10px;
 }
@@ -276,7 +317,7 @@ input,
 select,
 textarea {
     padding: 6px 10px;
-    border: 1px solid mediumvioletred;
+    border: 1px solid var(--colore-principale);
     border-radius: 4px;
     font-family: inherit;
     font-size: 1em;
@@ -302,7 +343,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    background-color: mediumvioletred;
+    background-color: var(--colore-principale);
     color: white;
     border: none;
     border-radius: 4px;
@@ -316,7 +357,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-    background-color: rgb(150, 30, 100);
+    background-color: var(--colore-principale);
 }
 
 /* ==========================================================================
@@ -336,7 +377,7 @@ figcaption {
 blockquote {
     background-color: white;
     color: black;
-    border-left: 5px solid mediumvioletred;
+    border-left: 5px solid var(--colore-principale);
     margin: 20px;
     padding: 10px 20px;
     font-style: italic;
@@ -344,7 +385,7 @@ blockquote {
 
 code {
     background-color: white;
-    color: mediumvioletred;
+    color: var(--colore-principale);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: "Courier New", monospace;
