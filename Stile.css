@@ -2,12 +2,10 @@
 :root {
     /* Colori principali */
     --colore-sfondo-pagina: rgb(238, 192, 207);
-    --colore-sfondo-pagina-dark: rgb(152, 17, 103);
     --colore-principale: mediumvioletred;
-    --colore-principale-dark: rgb(98, 12, 66);
     --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
     --colore-nav: mediumvioletred;
-    --colore-nav-dark: rgb(98, 12, 66);
+    --colore-background-card: white;
     --colore-testo: rgb(40, 35, 25);
     --colore-testo-chiaro: rgb(255, 255, 255);
 }
@@ -33,23 +31,19 @@
 }
 
 #dark-mode-switch {
-    display: none;
+   opacity: 0;
 }
 
 #dark-mode-switch:checked~.div_contenitore {
     background: #222;
-     --colore-sfondo-pagina: rgb(238, 192, 207);
-    --colore-sfondo-pagina-dark: rgb(152, 17, 103);
-    --colore-principale: mediumvioletred;
-    --colore-principale-dark: rgb(98, 12, 66);
-    --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
-    --colore-nav: mediumvioletred;
-    --colore-nav-dark: rgb(98, 12, 66);
-    --colore-testo: rgb(40, 35, 25);
-    --colore-testo-chiaro: rgb(255, 255, 255);
+     --colore-sfondo-pagina: rgb(152, 17, 103);
+    --colore-principale: rgb(98, 12, 66);
+    --colore-background-card: rgb(226, 104, 181);
+    --colore-nav: rgb(98, 12, 66);
+    --colore-testo: rgb(255, 255, 255);
 }
 
-
+/*sistemare colore testo chiaro/colore sfondo chiaro*/
 
 /* ==========================================================================
    Layout generale
@@ -142,7 +136,7 @@ h2 {
     margin-top: 20px;
     padding: 15px;
     border-left: 4px solid var(--colore-principale-dettagli-scuri);
-    background: var(--colore-testo-chiaro);
+    background: var(--colore-background-card);
     border-radius: 5px;
 }
 
@@ -152,7 +146,7 @@ h2 {
 
 
 pre {
-    background: var(--colore-testo-chiaro);
+    background: var(--colore-background-card);
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
@@ -172,7 +166,7 @@ pre {
     color: var(--colore-testo-chiaro);
 }
 
-.card>p {
+.card p {
     color: var(--colore-testo-chiaro);
     margin-bottom: 15px;
 }
@@ -201,7 +195,7 @@ pre {
 }
 
 .card code {
-    background: var(--colore-testo-chiaro);
+    background: var(--colore-background-card);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
@@ -272,7 +266,7 @@ ol {
 
 .esempio th,
 .esempio td {
-    border: 1px solid var(--colore-testo-chiaro);
+    border: 1px solid var(--colore-principale);
     padding: 10px;
     text-align: center;
 }
