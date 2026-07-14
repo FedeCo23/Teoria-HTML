@@ -19,11 +19,10 @@
         <a href="#semantici">Tag semantici</a>
         <a href="#tabelle">Tabelle</a>
         <a href="#form">Form</a>
-    
+
     </nav>
     <header>
-        <p>
-            Ultimo aggiornamento: <time datetime="2025-04-17">17 aprile 2025</time>
+        <p>Ultimo aggiornamento: <time datetime="2025-04-17">17 aprile 2025</time>
         </p>
         <h1>Guida di riferimento HTML</h1>
         <div>
@@ -67,9 +66,10 @@
                 <h3>Interruzione di riga</h3>
                 <p>Il tag <code>&lt;br&gt;</code> permette di andare a capo senza creare un nuovo paragrafo.</p>
                 <div class="esempio">
-                    Prima riga.<br>
-                    Seconda riga.<br>
-                    Terza riga.
+                    <p> Prima riga.<br>
+                        Seconda riga.<br>
+                        Terza riga.</p>
+
                 </div>
             </div>
             <div class="card">
@@ -327,32 +327,43 @@ Prima riga
                     <code>src</code>. L'attributo <code>controls</code> mostra i pulsanti di riproduzione, pausa, volume
                     e schermo intero.
                 </p>
-                <video width="300" controls src="video.mp4"></video>
+                <div class="esempio">
+                    <video width="300" controls src="video.mp4"></video>
+                </div>
             </div>
 
             <div class="card">
                 <h3>Video con più formati</h3>
                 <p>Utilizzando uno o più tag <code>&lt;source&gt;</code> il browser sceglie automaticamente il primo
                     formato supportato. Questo garantisce una maggiore compatibilità tra i diversi browser.</p>
-                <video controls autoplay muted loop>
-                    <source src="video.mp4" type="video/mp4">
-                    <source src="video.webm" type="video/webm">
-                    <source src="video.ogg" type="video/ogg">
-                    Il tuo browser non supporta il tag video.
-                </video>
+                <div class="esempio"> <video controls autoplay muted loop>
+                        <source src="video.mp4" type="video/mp4">
+                        <source src="video.webm" type="video/webm">
+                        <source src="video.ogg" type="video/ogg">
+                        Il tuo browser non supporta il tag video.
+                    </video></div>
+
             </div>
             <div class="card">
                 <h3>Attributi principali del tag video</h3>
-                <ul>
-                    <li><strong>controls</strong>: mostra i controlli di riproduzione.</li>
-                    <li><strong>autoplay</strong>: avvia automaticamente il video.</li>
-                    <li><strong>muted</strong>: riproduce il video senza audio (spesso necessario insieme ad autoplay).
-                    </li>
-                    <li><strong>loop</strong>: riavvia automaticamente il video al termine.</li>
-                    <li><strong>poster</strong>: visualizza un'immagine di anteprima prima della riproduzione.</li>
-                    <li><strong>preload</strong>: indica al browser come caricare il video prima della riproduzione.
-                    </li>
-                </ul>
+                <div class="esempio">
+                    <ul>
+                        <li><strong class="chiaro">controls</strong>: mostra i controlli di riproduzione.</li>
+                        <li><strong class="chiaro">autoplay</strong>: avvia automaticamente il video.</li>
+                        <li><strong class="chiaro">muted</strong>: riproduce il video senza audio (spesso necessario
+                            insieme
+                            ad autoplay).
+                        </li>
+                        <li><strong class="chiaro">loop</strong>: riavvia automaticamente il video al termine.</li>
+                        <li><strong class="chiaro">poster</strong>: visualizza un'immagine di anteprima prima della
+                            riproduzione.</li>
+                        <li><strong class="chiaro">preload</strong>: indica al browser come caricare il video prima
+                            della
+                            riproduzione.
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             <div class="card">
                 <h3>Sottotitoli</h3>
@@ -557,11 +568,14 @@ Prima riga
                 <h3>Stile delle tabelle</h3>
                 <p>Le tabelle possono essere personalizzate tramite CSS modificando bordi, spaziature, colori e
                     dimensioni.</p>
-                <p><code>padding</code> aggiunge spazio interno tra il contenuto e il bordo della cella.</p>
-                <p><code>margin</code> aggiunge spazio esterno tra la tabella e gli altri elementi della pagina.</p>
-                <p><code>border-collapse: collapse;</code> permette di unire i bordi delle celle evitando lo spazio
-                    doppio tra loro.</p>
-                <p><code>&lt;colgroup&gt;</code> permette di applicare stili specifici alle colonne della tabella.</p>
+                <div class="esempio">
+                    <p><code>padding</code> aggiunge spazio interno tra il contenuto e il bordo della cella.</p>
+                    <p><code>margin</code> aggiunge spazio esterno tra la tabella e gli altri elementi della pagina.</p>
+                    <p><code>border-collapse: collapse;</code> permette di unire i bordi delle celle evitando lo spazio
+                        doppio tra loro.</p>
+                    <p><code>&lt;colgroup&gt;</code> permette di applicare stili specifici alle colonne della tabella.
+                    </p>
+                </div>
             </div>
         </section>
         <section id="form">
@@ -601,9 +615,7 @@ Prima riga
             <h3>Gli input</h3>
             <p>Gli <code>input</code> sono elementi in linea che possono avere degli specifici attributi</p>
             <div class="input-grid">
-                <!--Studiare flex-wrap-->
                 <div class="input-card">
-                    <!--Capire box-sizing e borde-box-->
                     <p>L'input <code>text</code> crea una casella dove inserire un testo</p>
                     <p>Esempio input</p>
                     <input type="text" />
@@ -891,25 +903,30 @@ Prima riga
 
             <div class="card">
                 <h3>Attributi principali degli input</h3>
-                <ul>
-                    <li><code>checked</code>: imposta un checkbox o radio già selezionato.</li>
-                    <li><code>disabled</code>: disabilita il campo e non invia il valore.</li>
-                    <li><code>readonly</code>: rende il campo modificabile solo in lettura.</li>
-                    <li><code>required</code>: rende il campo obbligatorio.</li>
-                    <li><code>value</code>: indica il valore inviato al server.</li>
-                    <li><code>multiple</code>: permette più selezioni.</li>
-                    <li><code>placeholder</code>: mostra un suggerimento all'interno del campo.</li>
-                    <li><code>maxlength</code>: limita il numero massimo di caratteri.</li>
-                    <li><code>min</code> e <code>max</code>: definiscono valori minimo e massimo numerici.</li>
-                    <li><code>step</code>: definisce gli intervalli di incremento numerico.</li>
-                    <li><code>pattern</code>: permette di definire un formato obbligatorio tramite espressione regolare.
-                    </li>
-                    <li><code>accept</code>: limita i tipi di file caricabili.</li>
-                    <li><code>autofocus</code>: assegna automaticamente il focus al campo all'apertura della pagina.
-                    </li>
-                    <li><code>autocomplete</code>: permette al browser di suggerire valori già inseriti in precedenza.
-                    </li>
-                </ul>
+                <div class="esempio">
+                    <ul>
+                        <li><code>checked</code>: imposta un checkbox o radio già selezionato.</li>
+                        <li><code>disabled</code>: disabilita il campo e non invia il valore.</li>
+                        <li><code>readonly</code>: rende il campo modificabile solo in lettura.</li>
+                        <li><code>required</code>: rende il campo obbligatorio.</li>
+                        <li><code>value</code>: indica il valore inviato al server.</li>
+                        <li><code>multiple</code>: permette più selezioni.</li>
+                        <li><code>placeholder</code>: mostra un suggerimento all'interno del campo.</li>
+                        <li><code>maxlength</code>: limita il numero massimo di caratteri.</li>
+                        <li><code>min</code> e <code>max</code>: definiscono valori minimo e massimo numerici.</li>
+                        <li><code>step</code>: definisce gli intervalli di incremento numerico.</li>
+                        <li><code>pattern</code>: permette di definire un formato obbligatorio tramite espressione
+                            regolare.
+                        </li>
+                        <li><code>accept</code>: limita i tipi di file caricabili.</li>
+                        <li><code>autofocus</code>: assegna automaticamente il focus al campo all'apertura della pagina.
+                        </li>
+                        <li><code>autocomplete</code>: permette al browser di suggerire valori già inseriti in
+                            precedenza.
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
     </main>

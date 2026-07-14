@@ -1,41 +1,33 @@
+/*VARIABILI COLORE*/
+:root {
+    /* Colori principali */
+    --colore-sfondo-pagina: rgb(238, 192, 207);
+    --colore-principale-scuro: mediumvioletred;
+    --colore-principale-scruro-scuro: rgba(199, 21, 133, 0.3);
+    --colore-nav: mediumvioletred;
+    --colore-card: rgb(233, 224, 200);
+    --colore-testo: rgb(40, 35, 25);
+    --colore-testo-chiaro: rgb(255, 255, 255);
+}
+
 /* ==========================================================================
    Layout generale
    ========================================================================== */
 
 body {
-    background-color: rgb(238, 192, 207);
+    background-color:var(--colore-sfondo-pagina)
 
 }
 
 main {
-    vertical-align: top;
-    /* Allinea il testo o gli elementi in alto */
     border: solid 3px;
-    border-color: mediumvioletred;
+    border-color: var(--colore-principale-scuro);
+    border-radius: 5px;
     margin: 20px;
     padding: 30px;
 }
 
-.layout_flex {
-    display: flex;
-    justify-content: space-around;
-    /* Centra gli elementi nella pagina */
-    border: groove 20px;
-    /* Solid, groove, dotted ecc sono tipologie di effetti per i bordi */
-    border-color: mediumvioletred;
-    background-color: white;
-    margin: 20px;
-    padding: 50px;
-}
 
-.box {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    border: groove 20px;
-    border-color: mediumvioletred;
-    text-align: left;
-}
 
 .center {
     text-align: center;
@@ -46,13 +38,13 @@ main {
    ========================================================================== */
 
 nav {
-    background-color: mediumvioletred;
+    background-color: var(--colore-nav);
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: var(--colore-testo-chiaro);
     margin: 10px;
     text-decoration: none;
     padding: 5px;
@@ -61,21 +53,21 @@ nav a {
 }
 
 nav a:hover {
-    background-color: pink;
+    background-color: var(--colore-sfondo-pagina)
 }
 
 hr {
     border: none;
     height: 1px;
-    background-color: mediumvioletred;
-    box-shadow: 0 2px 4px rgba(199, 21, 133, 0.3);
+    background-color: var(--colore-principale-scuro);
+    box-shadow: 0 2px 4px var(--colore-principale-scruro-scuro);
 }
 
 header {
     text-align: center;
 }
 
-header p {
+header {
     text-align: center;
     font-style: italic;
 }
@@ -86,7 +78,7 @@ header p {
 
 h1,
 h2 {
-    color: white;
+    color: var(--colore-testo-chiaro);
     text-align: center;
     font-size: 2em;
 }
@@ -96,8 +88,8 @@ h2 {
 }
 
 .square {
-    background-color: mediumvioletred;
-    color: white;
+    background-color: var(--colore-principale-scuro);
+    color: var(--colore-testo-chiaro);
     margin: 20px;
     padding: 15px;
 }
@@ -113,30 +105,14 @@ h2 {
     margin-bottom: 40px;
 }
 
-.card {
-    margin-bottom: 40px;
-    padding: 25px;
-    border: 1px solid #d8d8d8;
-    border-radius: 10px;
-    background: #fafafa;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--colore-principale-scuro);
-}
-
-.card p {
-    margin-bottom: 15px;
-}
-
 .esempio {
     margin-top: 20px;
     padding: 15px;
-    border-left: 4px solid var(--colore-principale-scuro);
-    background: white;
+    border-left: 4px solid var(--colore-principale-scruro-scuro);
+    background: var(--colore-testo-chiaro);
     border-radius: 5px;
 }
+.esempio p {color: var(--colore-testo);}
 
 
 pre {
@@ -146,52 +122,21 @@ pre {
     overflow-x: auto;
 }
 
-/* ==========================================================================
-   Liste
-   ========================================================================== */
-
-ul {
-    list-style-type: disc;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-/* ==========================================================================
-   Immagini e video
-   ========================================================================== */
-
-#immagini {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-}
-
-#immagini h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-#immagini>p {
-    text-align: center;
-    margin-bottom: 40px;
-}
 
 .card {
     margin-bottom: 40px;
     padding: 25px;
     border: 1px solid #d8d8d8;
     border-radius: 10px;
-    background: #fafafa;
+    background: var(--colore-principale-scuro);
 }
 
 .card h3 {
     margin-bottom: 15px;
-    color: #2d5a41;
+    color: var(--colore-testo-chiaro);
 }
 
-.card p {
+.card p {color: var(--colore-testo-chiaro);
     margin-bottom: 15px;
 }
 
@@ -219,6 +164,33 @@ ol {
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
+}
+
+/* ==========================================================================
+   Liste
+   ========================================================================== */
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+/* ==========================================================================
+   Immagini e video
+   ========================================================================== */
+
+#immagini {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+#immagini h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .input-grid {
