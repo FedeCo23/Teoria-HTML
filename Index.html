@@ -12,10 +12,10 @@
 <body>
     <input type="checkbox" id="dark-mode-switch" class="dm-checkbox">
     <div class="dark-mode-bar">
-    <label for="dark-mode-switch">Dark Mode</label>
+        <label for="dark-mode-switch">Dark Mode</label>
     </div>
     <div class="div_contenitore">
-        <nav>
+        <nav id="menu">
             <a href="#elementi">Elementi HTML</a>
             <a href="#liste">Liste</a>
             <a href="#link">Link</a>
@@ -217,7 +217,9 @@ Prima riga
                     <div class="esempio">
                         <figure>
                             <a href="https://www.youtube.com/@EdoardoMidali" target="_blank">
-                                <img src="Immagini/Edoardo Midali.jpg" alt="Edoardo Midali, developer con 15 anni di esperienza che fa video su Youtube sullo sviluppo web per neofiti e non"> <!--Sistemare immagine-->
+                                <img src="Immagini/Edoardo Midali.jpg"
+                                    alt="Edoardo Midali, developer con 15 anni di esperienza che fa video su Youtube sullo sviluppo web per neofiti e non">
+                                <!--Sistemare immagine-->
                             </a>
                             <figcaption>Clicca l'immagine per aprire il collegamento.</figcaption>
                         </figure>
@@ -282,8 +284,7 @@ Prima riga
                     <h3>2. Percorso relativo</h3>
                     <p>Il percorso relativo utilizza la posizione del file rispetto alla
                         pagina HTML.</p>
-                    <div class="esempio"><img 
-                       class="transform" src="Immagini/Attack on titan eren campo di fiori.jpg"
+                    <div class="esempio"><img src="Immagini/Attack on titan eren campo di fiori.jpg"
                             alt="Immagine nella stessa cartella raffigurante un una scena dell'anime 'Attack on titan' dove un gigante attacca una citta circondata da mura">
                         <figcaption>Immagine di esempio presente nella stessa cartella del file HTML.
                         </figcaption>
@@ -293,7 +294,8 @@ Prima riga
                     <h3>3. Immagine tramite link</h3>
                     <p>L'immagine viene caricata utilizzando l'URL di un sito web.
                     </p>
-                    <div class="esempio"><img src="https://preview.redd.it/what-would-you-fix-about-solo-leveling-v0-byhgfo82276f1.jpeg?auto=webp&s=a0dd9c7bed2991f4d09500a7f83875dfb935583a"
+                    <div class="esempio"><img
+                            src="https://preview.redd.it/what-would-you-fix-about-solo-leveling-v0-byhgfo82276f1.jpeg?auto=webp&s=a0dd9c7bed2991f4d09500a7f83875dfb935583a"
                             alt="Immagine caricata da Internet raffigurante il protagonista dell'anime 'Solo leveling' circondata da ombre pronte ada attaccare">
                         <figcaption>Immagine caricata da un URL esterno.</figcaption>
                     </div>
@@ -680,16 +682,16 @@ Prima riga
                     </div>
                     <div class="input-card">
                         <p>L'input <code>button</code> crea un pulsante che può essere manipolato con JavaScript.</p>
-                        
+
                         <p>Crea un pulsante come l'input submit e il valore deve essere specificato con l'attributo
                             <code>value</code>.
                         </p>
                         <p>Esempio input</p>
                         <input type="button" />
-                       
+
                         <input type="button" value="Clicca qui" />
                         <button type="button">Clicca qui</button>
-                    
+
                     </div>
                     <div class="input-card">
                         <p>L'input <code>date</code> crea una casella che ti permette di selezionare una data</p>
@@ -724,7 +726,7 @@ Prima riga
                         </p>
                         <p>Esempio input</p>
                         <input type="number" />
-                       
+
                     </div>
                     <div class="input-card">
                         <p>L'input <code>color</code> crea una casella che permette di scegliere un colore</p>
@@ -791,7 +793,7 @@ Prima riga
                         <input type="image" src="Immagini/peony-light-pink_pfingstrose-rosa.avif" width="100px" />
                     </div>
                     <div class="input-card input-card-wide">
-                       
+
                         <p>L'input <code>submit</code> si usa per aggiungere un pulsante di invio ad un form.</p>
                         <p>Quando l'utente lo clicca il form viene inviato.</p>
                         <p>
@@ -950,7 +952,8 @@ Prima riga
         <footer>
             <p>Creato da Federica &mdash; ultimo aggiornamento <time datetime="2026-07-14">14 Luglio 2026</time></p>
         </footer>
-
+        <a href="#menu"><img src="Immagini/uparrow_120588.webp"
+                alt="Freccia nera che, se cliccata, permette di tornare al menu principale"></a>
     </div>
 </body>
 

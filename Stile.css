@@ -4,6 +4,7 @@
     --colore-sfondo-pagina: rgb(238, 192, 207);
     --colore-principale: mediumvioletred;
     --colore-principale-ombra: rgba(199, 21, 133, 0.3);
+    --colore-principale-scuro: rgb(98, 12, 66); /*solo per il button darkmode*/
 
     /* Colori delle box "esempio"/code/pre*/
     --colore-sfondo-chiaro: white;
@@ -26,7 +27,7 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    background-color: var(--colore-principale);
+    background-color:var(--colore-principale-scuro) ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +53,7 @@ body:has(#dark-mode-switch:checked) {
     --colore-principale: rgb(98, 12, 66);
     --colore-principale-ombra: rgba(0, 0, 0, 0.4);
     --colore-testo-pagina: rgb(240, 230, 235);
+    --colore-principale-scuro: mediumvioletred;
 }
 
 /*Per i browser che non supportano :has (progressive enhancement)*/
@@ -259,9 +261,8 @@ ol {
     text-align: center;
     margin-bottom: 15px;
 }
-.card img {width: 200px;
-     }
-    .transform{rotate: 90deg;}
+
+
 .input-grid {
     display: flex;
     flex-wrap: wrap;
@@ -382,4 +383,89 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
     filter: brightness(0.85);
+}
+
+/*Responsive - Tablet (fino a 900px)*/
+
+@media (max-width: 900px) {
+    main {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .input-card {
+        flex: 1 1 calc(50% - 20px);
+        /* da 4 a 2 colonne */
+    }
+
+    .input-card-wide {
+        width: 100%;
+    }
+
+}
+
+/*Responsive - Mobile (fino a 600px)*/
+
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    main {
+        margin: 5px;
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .input-grid {
+        flex-direction: column;
+    }
+
+    .input-card {
+        flex: 1 1 100%;
+    }
+
+    .esempio iframe,
+    .esempio video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .esempio table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .dark-mode-bar {
+        top: auto;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        border-radius: 5px 5px 0 0;
+        background-color: mediumvioletred;
+    }
+
+    .dark-mode-bar label {
+        writing-mode: horizontal-tb;
+    }
 }
