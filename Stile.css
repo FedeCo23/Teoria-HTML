@@ -120,6 +120,15 @@ header {
     text-align: center;
     font-style: italic;
 }
+.arrow{  position: fixed;
+    bottom: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+background-color: var(--colore-sfondo-pagina);
+border-radius: 50%;
+    box-shadow: var(--colore-principale-ombra);}
 
 /*Titoli e testo*/
 
