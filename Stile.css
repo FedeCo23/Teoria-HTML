@@ -10,8 +10,13 @@
     --colore-code-bg: #ececec;
     --colore-testo-scuro: rgb(40, 35, 25);
 
+     /* Testo scuro in modalità chiara che poi cambia in darkmode */
+     --colore-testo-pagina: rgb(40, 35, 25);
+
     /* Testo su sfondo scuro/saturo (card, nav, h1/h2) */
+
     --colore-testo-chiaro: rgb(255, 255, 255);
+    --colore-testo-scuro: rgb(0, 0, 0);
 }
 
 /*Dark mode*/
@@ -46,15 +51,16 @@
     --colore-sfondo-pagina: rgb(40, 8, 28);
     --colore-principale: rgb(98, 12, 66);
     --colore-principale-ombra: rgba(0, 0, 0, 0.4);
+    --colore-testo-pagina: rgb(240, 230, 235);
 }
 
 /*Layout generale*/
-body{background-color: var(--colore-sfondo-pagina);}
 .div_contenitore {
     max-width: 1000px;
     min-height: 100vh;
     margin: 0 auto;
     background-color: var(--colore-sfondo-pagina);
+     color: var(--colore-testo-pagina);
 }
 
 main {
