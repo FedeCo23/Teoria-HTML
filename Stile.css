@@ -10,8 +10,8 @@
     --colore-code-bg: #ececec;
     --colore-testo-scuro: rgb(40, 35, 25);
 
-     /* Testo scuro in modalità chiara che poi cambia in darkmode */
-     --colore-testo-pagina: rgb(40, 35, 25);
+    /* Testo scuro in modalità chiara che poi cambia in darkmode */
+    --colore-testo-pagina: rgb(40, 35, 25);
 
     /* Testo su sfondo scuro/saturo (card, nav, h1/h2) */
 
@@ -47,6 +47,14 @@
     position: absolute;
 }
 
+body:has(#dark-mode-switch:checked) {
+    --colore-sfondo-pagina: rgb(40, 8, 28);
+    --colore-principale: rgb(98, 12, 66);
+    --colore-principale-ombra: rgba(0, 0, 0, 0.4);
+    --colore-testo-pagina: rgb(240, 230, 235);
+}
+
+/*Per i browser che non supportano :has (progressive enhancement)*/
 #dark-mode-switch:checked~.div_contenitore {
     --colore-sfondo-pagina: rgb(40, 8, 28);
     --colore-principale: rgb(98, 12, 66);
@@ -55,12 +63,19 @@
 }
 
 /*Layout generale*/
+body {
+    background-color: var(--colore-sfondo-pagina);
+    color: var(--colore-testo-pagina);
+    min-height: 100vh;
+    margin: 0;
+}
+
 .div_contenitore {
     max-width: 1000px;
     min-height: 100vh;
     margin: 0 auto;
     background-color: var(--colore-sfondo-pagina);
-     color: var(--colore-testo-pagina);
+    color: var(--colore-testo-pagina);
 }
 
 main {
@@ -77,6 +92,7 @@ nav {
     background-color: var(--colore-principale);
     padding: 10px;
     text-align: center;
+    border-radius: 5px;
 }
 
 nav a {
@@ -121,6 +137,7 @@ h2 {
     color: var(--colore-testo-chiaro);
     margin: 20px;
     padding: 15px;
+    border-radius: 5px;
 }
 
 #elementi {
@@ -242,7 +259,9 @@ ol {
     text-align: center;
     margin-bottom: 15px;
 }
-
+.card img {width: 200px;
+     }
+    .transform{rotate: 90deg;}
 .input-grid {
     display: flex;
     flex-wrap: wrap;
