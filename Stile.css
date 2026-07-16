@@ -3,56 +3,58 @@
     /* Colori principali */
     --colore-sfondo-pagina: rgb(238, 192, 207);
     --colore-principale: mediumvioletred;
-    --colore-principale-dettagli-scuri: rgba(199, 21, 133, 0.3);
-    --colore-nav: mediumvioletred;
-    --colore-background-card: white;
-    --colore-testo: rgb(40, 35, 25);
+    --colore-principale-ombra: rgba(199, 21, 133, 0.3);
+
+    /* Colori delle box "esempio"/code/pre*/
+    --colore-sfondo-chiaro: white;
+    --colore-code-bg: #ececec;
+    --colore-testo-scuro: rgb(40, 35, 25);
+
+    /* Testo su sfondo scuro/saturo (card, nav, h1/h2) */
     --colore-testo-chiaro: rgb(255, 255, 255);
 }
 
+/*Dark mode*/
 
-/*DARK MODE*/
 .dark-mode-bar {
     position: fixed;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    background-color: var(--colore-testo);
+    background-color: var(--colore-principale);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    border-radius: 5px;
+    padding: 10px 6px;
+    border-radius: 5px 0 0 5px;
+    z-index: 1000;
 }
 
 .dark-mode-bar label {
     writing-mode: vertical-rl;
     color: var(--colore-testo-chiaro);
+    cursor: pointer;
 }
 
 #dark-mode-switch {
-   opacity: 0;
+    opacity: 0;
+    position: absolute;
 }
 
 #dark-mode-switch:checked~.div_contenitore {
-    background: #222;
-     --colore-sfondo-pagina: rgb(152, 17, 103);
+    --colore-sfondo-pagina: rgb(40, 8, 28);
     --colore-principale: rgb(98, 12, 66);
-    --colore-background-card: rgb(226, 104, 181);
-    --colore-nav: rgb(98, 12, 66);
-    --colore-testo: rgb(255, 255, 255);
+    --colore-principale-ombra: rgba(0, 0, 0, 0.4);
 }
 
-/*sistemare colore testo chiaro/colore sfondo chiaro*/
-
-/* ==========================================================================
-   Layout generale
-   ========================================================================== */
-
-body {
+/*Layout generale*/
+body{background-color: var(--colore-sfondo-pagina);}
+.div_contenitore {
     max-width: 1000px;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: var(--colore-sfondo-pagina)
+    background-color: var(--colore-sfondo-pagina);
 }
 
 main {
@@ -63,13 +65,10 @@ main {
     padding: 30px;
 }
 
-
-/* ==========================================================================
-   Navigazione e intestazione
-   ========================================================================== */
+/* Navigazione e intestazione */
 
 nav {
-    background-color: var(--colore-nav);
+    background-color: var(--colore-principale);
     padding: 10px;
     text-align: center;
 }
@@ -83,25 +82,22 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--colore-sfondo-pagina)
+    background-color: var(--colore-sfondo-pagina);
 }
 
 hr {
     border: none;
     height: 1px;
     background-color: var(--colore-principale);
-    box-shadow: 0 2px 4px var(--colore-principale-dettagli-scuri);
+    box-shadow: 0 2px 4px var(--colore-principale-ombra);
 }
-
 
 header {
     text-align: center;
     font-style: italic;
 }
 
-/* ==========================================================================
-   Titoli e testo
-   ========================================================================== */
+/*Titoli e testo*/
 
 h1,
 h2 {
@@ -132,26 +128,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-.esempio {
-    margin-top: 20px;
-    padding: 15px;
-    border-left: 4px solid var(--colore-principale-dettagli-scuri);
-    background: var(--colore-background-card);
-    border-radius: 5px;
-}
-
-.esempio p {
-    color: var(--colore-testo);
-}
-
-
-pre {
-    background: var(--colore-background-card);
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
+/*Card ed esempi*/
 
 .card {
     margin-bottom: 40px;
@@ -159,15 +136,14 @@ pre {
     border: 1px solid #d8d8d8;
     border-radius: 10px;
     background: var(--colore-principale);
+    color: var(--colore-testo-chiaro);
 }
 
 .card h3 {
     margin-bottom: 15px;
-    color: var(--colore-testo-chiaro);
 }
 
 .card p {
-    color: var(--colore-testo-chiaro);
     margin-bottom: 15px;
 }
 
@@ -186,24 +162,61 @@ pre {
     margin-bottom: 25px;
 }
 
-.card strong {
-    color: var(--colore-testo);
+.esempio {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid var(--colore-principale-ombra);
+    background: var(--colore-sfondo-chiaro);
+    color: var(--colore-testo-scuro);
+    border-radius: 5px;
 }
 
-.card .strong_chiaro {
-    color: var(--colore-testo-chiaro);
+pre {
+    background: var(--colore-sfondo-chiaro);
+    color: var(--colore-testo-scuro);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
 }
 
-.card code {
-    background: var(--colore-background-card);
+/*Figure, citazioni e codice*/
+
+figure {
+    margin: 20px;
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+blockquote {
+    background-color: var(--colore-sfondo-chiaro);
+    color: var(--colore-testo-scuro);
+    border-left: 5px solid var(--colore-principale);
+    margin: 20px;
+    padding: 10px 20px;
+    font-style: italic;
+}
+
+code {
+    background-color: var(--colore-code-bg);
+    color: var(--colore-principale);
     padding: 2px 6px;
     border-radius: 4px;
-    font-family: monospace;
+    font-family: "Courier New", monospace;
 }
 
-/* ==========================================================================
-   Liste
-   ========================================================================== */
+pre code {
+    display: block;
+    background: transparent;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+/*Liste*/
+
 ul {
     list-style-type: disc;
 }
@@ -212,9 +225,7 @@ ol {
     list-style-type: decimal;
 }
 
-/* ==========================================================================
-   Immagini e video
-   ========================================================================== */
+/*Immagini e video*/
 
 #immagini {
     margin: 50px auto;
@@ -236,9 +247,9 @@ ol {
     flex: 1 1 calc(25% - 20px);
     min-width: 180px;
     box-sizing: border-box;
-    color: white;
-    background-color: mediumvioletred;
-    border: 3px solid rgb(197, 67, 175);
+    color: var(--colore-testo-chiaro);
+    background-color: var(--colore-principale);
+    border: 3px solid var(--colore-principale-ombra);
     border-radius: 8px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     padding: 5px;
@@ -255,9 +266,7 @@ ol {
     margin-right: auto;
 }
 
-/* ==========================================================================
-   Tabelle
-   ========================================================================== */
+/*Tabelle*/
 
 .esempio table {
     width: 100%;
@@ -278,12 +287,10 @@ ol {
 
 .esempio th {
     background: var(--colore-principale);
-    color: white;
+    color: var(--colore-testo-chiaro);
 }
 
-/* ==========================================================================
-   Form
-   ========================================================================== */
+/*Form*/
 
 form {
     margin: 20px 0;
@@ -328,9 +335,7 @@ textarea {
     margin: 10px 0;
 }
 
-/* ==========================================================================
-   Bottoni
-   ========================================================================== */
+/*Bottoni*/
 
 .btn,
 button,
@@ -338,7 +343,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
     background-color: var(--colore-principale);
-    color: white;
+    color: var(--colore-testo-chiaro);
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
@@ -351,42 +356,5 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-    background-color: var(--colore-principale);
-}
-
-/* ==========================================================================
-   Figure, citazioni e codice
-   ========================================================================== */
-
-figure {
-    margin: 20px;
-    text-align: center;
-}
-
-figcaption {
-    font-style: italic;
-    margin-top: 5px;
-}
-
-blockquote {
-    background-color: white;
-    color: black;
-    border-left: 5px solid var(--colore-principale);
-    margin: 20px;
-    padding: 10px 20px;
-    font-style: italic;
-}
-
-code {
-    background-color: white;
-    color: var(--colore-principale);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: "Courier New", monospace;
-}
-
-pre code {
-    display: block;
-    padding: 15px;
-    overflow-x: auto;
+    filter: brightness(0.85);
 }
