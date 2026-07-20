@@ -238,11 +238,13 @@ Prima riga
                     </p>
 
                     <div class="esempio">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JRJNvxoh844"
-                            title="Video YouTube incorporato" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
+                        <div class="media-wrapper">
+                            <iframe src="https://www.youtube.com/embed/7t9mdS28bSk"
+                                title="Introduzione ad HTML ed Installazione - Corso HTML di Edoardo Midali"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -365,7 +367,7 @@ Prima riga
                         e schermo intero.
                     </p>
                     <div class="esempio">
-                        <video width="300" controls src="video.mp4"></video>
+                        <video width="300" controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
                     </div>
                 </div>
 
@@ -373,12 +375,16 @@ Prima riga
                     <h3>Video con più formati</h3>
                     <p>Utilizzando uno o più tag <code>&lt;source&gt;</code> il browser sceglie automaticamente il primo
                         formato supportato. Questo garantisce una maggiore compatibilità tra i diversi browser.</p>
-                    <div class="esempio"> <video controls autoplay muted loop>
-                            <source src="video.mp4" type="video/mp4">
-                            <source src="video.webm" type="video/webm">
-                            <source src="video.ogg" type="video/ogg">
-                            Il tuo browser non supporta il tag video.
-                        </video></div>
+                    <div class="esempio">
+                        <div class="media-wrapper media-wrapper-narrow">
+                            <video controls autoplay muted loop>
+                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                <source src="https://www.w3schools.com/html/mov_bbb.webm" type="video/webm">
+                                <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="card">
@@ -606,15 +612,9 @@ Prima riga
                         L'attributo <code>action</code> indica la destinazione a cui inviare i dati, mentre
                         <code>method</code> specifica il metodo HTTP utilizzato.
                     </p>
-                    <div class="esempio">
-                        <pre>
-<code>
-&lt;form action="inserimento_dati.com" method="post"&gt;
+                    <pre><code>&lt;form action="inserimento_dati.com" method="post"&gt;
     &lt;!-- Input e altri elementi del modulo --&gt;
-&lt;/form&gt;
-</code>
-</pre>
-                    </div>
+&lt;/form&gt;</code></pre>
                 </div>
                 <div class="card">
                     <h3>Metodo GET</h3>
@@ -720,15 +720,6 @@ Prima riga
                         <input type="number" min="1" max="9" />
                     </div>
                     <div class="input-card">
-                        <p>
-                            L'input <code>number</code> crea un campo in cui gli utenti possono inserire soltanto
-                            valori numerici
-                        </p>
-                        <p>Esempio input</p>
-                        <input type="number" />
-
-                    </div>
-                    <div class="input-card">
                         <p>L'input <code>color</code> crea una casella che permette di scegliere un colore</p>
                         <p>
                             Il valore prefedinito è il nero (codice esadecimale #000000) ma può essere modificato
@@ -752,11 +743,13 @@ Prima riga
                     </div>
                     <div class="input-card">
                         <p>
-                            L'input <code>hidden</code>è un campo di form invisibile all'utente ed è usato per inviare
-                            al server informazioni aggiuntive (come ID o token) insieme agli altri dati del form
+                            L'input <code>hidden</code> è un campo di form invisibile all'utente ed è usato per inviare
+                            al server informazioni aggiuntive (come ID o token) insieme agli altri dati del form.
                         </p>
+                        <p class="nota-grigia">Il pulsante non si vede volontariamente: l'input invia dati al server
+                            senza essere mostrato all'utente.</p>
                         <p>Esempio input</p>
-                        <input type="hidden" />
+                        <input type="hidden" name="token" value="abc123" />
                     </div>
                     <div class="input-card">
                         <p>
@@ -790,7 +783,8 @@ Prima riga
                     <div class="input-card">
                         <p>L'input <code>image</code> crea un pulsante con un immagine che si può cliccare</p>
                         <p>Esempio input</p>
-                        <input type="image" src="Immagini/peony-light-pink_pfingstrose-rosa.avif" width="100px" />
+                        <input type="image" src="Immagini/Attack on titan eren campo di fiori.jpg" alt="Invia"
+                            width="100" />
                     </div>
                     <div class="input-card input-card-wide">
 
@@ -828,6 +822,11 @@ Prima riga
                         <code>&lt;input&gt;</code>. L'utente può scegliere un'opzione proposta oppure inserire un valore
                         diverso.
                     </p>
+                    <p>
+                        A differenza del <code>&lt;label&gt;</code>, che descrive il campo e ne migliora
+                        l'accessibilità, il <code>&lt;datalist&gt;</code> non etichetta l'input: collegato tramite
+                        l'attributo <code>list</code>, mostra solo un elenco di valori suggeriti durante la digitazione.
+                    </p>
                     <div class="esempio">
                         <label for="nomi">Inserisci il nome di un amico:</label>
                         <input list="nomi" name="nomi" id="nome">
@@ -844,7 +843,11 @@ Prima riga
                     <p>L'elemento <code>&lt;label&gt;</code> fornisce una descrizione associata a un campo del form e
                         migliora l'accessibilità.</p>
                     <p>L'attributo <code>for</code> del label deve corrispondere all'<code>id</code> dell'input
-                        collegato.
+                        collegato. Cliccando sul label, il focus passa automaticamente al campo collegato.
+                    </p>
+                    <p>
+                        Il <code>&lt;label&gt;</code> non va confuso con il <code>&lt;datalist&gt;</code>: il label
+                        descrive il campo, mentre il datalist propone valori già pronti tra cui scegliere.
                     </p>
                     <div class="esempio">
                         <label for="nome_esempio">Inserire nome:</label>

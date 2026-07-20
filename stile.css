@@ -5,6 +5,7 @@
     --colore-principale: mediumvioletred;
     --colore-principale-ombra: rgba(199, 21, 133, 0.3);
     --colore-principale-scuro: rgb(98, 12, 66); /*solo per il button darkmode*/
+    --colore-bottone: mediumvioletred;
 
     /* Colori delle box "esempio"/code/pre*/
     --colore-sfondo-chiaro: white;
@@ -17,7 +18,6 @@
     /* Testo su sfondo scuro/saturo (card, nav, h1/h2) */
 
     --colore-testo-chiaro: rgb(255, 255, 255);
-    --colore-testo-scuro: rgb(0, 0, 0);
 }
 
 /*Dark mode*/
@@ -54,6 +54,9 @@ body:has(#dark-mode-switch:checked) {
     --colore-principale-ombra: rgba(0, 0, 0, 0.4);
     --colore-testo-pagina: rgb(240, 230, 235);
     --colore-principale-scuro: mediumvioletred;
+    --colore-bottone: rgb(220, 120, 170);
+    --colore-sfondo-chiaro: rgb(55, 20, 40);
+    --colore-code-bg: rgb(70, 30, 50);
 }
 
 /*Per i browser che non supportano :has (progressive enhancement)*/
@@ -62,6 +65,9 @@ body:has(#dark-mode-switch:checked) {
     --colore-principale: rgb(98, 12, 66);
     --colore-principale-ombra: rgba(0, 0, 0, 0.4);
     --colore-testo-pagina: rgb(240, 230, 235);
+    --colore-bottone: rgb(220, 120, 170);
+    --colore-sfondo-chiaro: rgb(55, 20, 40);
+    --colore-code-bg: rgb(70, 30, 50);
 }
 
 /*Layout generale*/
@@ -196,6 +202,14 @@ h2 {
     margin-bottom: 25px;
 }
 
+body:has(#dark-mode-switch:checked) .nota-grigia {
+    color: #aaa;
+}
+
+.card pre {
+    margin-top: 15px;
+}
+
 .esempio {
     margin-top: 20px;
     padding: 15px;
@@ -203,6 +217,50 @@ h2 {
     background: var(--colore-sfondo-chiaro);
     color: var(--colore-testo-scuro);
     border-radius: 5px;
+    overflow-x: auto;
+}
+
+.esempio p {
+    line-height: 2;
+    margin: 0 0 0.6em;
+}
+
+.esempio p:last-child {
+    margin-bottom: 0;
+}
+
+.esempio p code {
+    margin-right: 0.35em;
+    vertical-align: baseline;
+}
+
+.media-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+}
+
+.media-wrapper-narrow {
+    max-width: 400px;
+}
+
+.media-wrapper iframe,
+.media-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 4px;
+}
+
+.nota-grigia {
+    color: #888;
+    font-style: italic;
+    font-size: 0.95em;
 }
 
 pre {
@@ -287,25 +345,31 @@ ol {
     border: 3px solid var(--colore-principale-ombra);
     border-radius: 8px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
+    overflow-wrap: break-word;
+}
+
+.input-card input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.input-card select,
+.input-card textarea {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .input-card-wide {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 700px;
+    flex: 1 1 100%;
+    width: 100%;
     max-width: 100%;
-    flex: none;
-    margin-right: auto;
 }
 
 /*Tabelle*/
 
 .esempio table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .esempio th,
@@ -313,6 +377,8 @@ ol {
     border: 1px solid var(--colore-principale);
     padding: 10px;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .esempio caption {
@@ -377,7 +443,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    background-color: var(--colore-principale);
+    background-color: var(--colore-bottone);
     color: var(--colore-testo-chiaro);
     border: none;
     border-radius: 4px;
@@ -411,6 +477,15 @@ input[type="button"]:hover {
         width: 100%;
     }
 
+    .esempio th,
+    .esempio td {
+        padding: 6px 4px;
+        font-size: 0.85em;
+    }
+
+    .media-wrapper-narrow {
+        max-width: 100%;
+    }
 }
 
 /*Responsive - Mobile (fino a 600px)*/
@@ -452,16 +527,21 @@ input[type="button"]:hover {
         flex: 1 1 100%;
     }
 
-    .esempio iframe,
-    .esempio video {
+    input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+    select,
+    textarea {
         max-width: 100%;
-        height: auto;
+        box-sizing: border-box;
     }
 
-    .esempio table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    .esempio th,
+    .esempio td {
+        padding: 5px 3px;
+        font-size: 0.78em;
+    }
+
+    .media-wrapper {
+        max-width: 100%;
     }
 
     .dark-mode-bar {
