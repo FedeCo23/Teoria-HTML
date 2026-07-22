@@ -552,6 +552,7 @@ input[type="button"]:hover {
         flex-direction: row;
         border-radius: 5px 5px 0 0;
         background-color: mediumvioletred;
+        z-index: 1;
     }
 
     .dark-mode-bar label {
